@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Manasi Reddy!</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.hdwallpapers.in/download/wall_e_happy_birthday_4k-wide.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 100px;
+            height: 140px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: floatUp 2s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .love {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            color: #FF1493; /* Deep Pink */
+            font-size: 40px;
+            animation: floatSide 1.5s linear infinite;
+        }
+
+        @keyframes floatSide {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FFD700; /* Gold */
+            border-radius: 50%;
+            animation: fallDown 2s linear infinite;
+        }
+
+        @keyframes fallDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(150px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .booster {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            color: #FFA500; /* Orange */
+            font-size: 40px;
+            animation: floatUp 3s linear infinite;
+        }
+
+        .cake {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            color: #8B4513; /* Saddle Brown */
+            font-size: 64px;
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .birthday-button {
+            background-color: #FFD700; /* Gold */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .birthday-button:hover {
+            background-color: #FFA500; /* Orange */
+        }
+
+        .birthday-tags {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tag {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #FF69B4; /* Hot Pink */
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .interactive-message {
+            cursor: pointer;
+            border-bottom: 1px dashed #333;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .interactive-message:hover {
+            color: #FFD700; /* Gold */
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 600px) {
+            #card {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .balloon {
+                width: 50px;
+                height: 70px;
+            }
+
+            .love {
+                width: 30px;
+                height: 30px;
+                font-size: 24px;
+            }
+
+            .confetti {
+                width: 10px;
+                height: 10px;
+            }
+
+            .booster {
+                width: 30px;
+                height: 30px;
+                font-size: 24px;
+            }
+
+            .cake {
+                width: 40px;
+                height: 40px;
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="card">
+        <h1>Happy Birthday Manasi Reddy!</h1>
+        <p>Wishing you a day filled with love and joy. Cheers to another fantastic year ahead! - From Harsha</p>
+    </div>
+
+    <!-- New interactive message -->
+    <p>Dear <span class="interactive-message" onclick="showPersonalMessage()">Manasi Reddy</span>,</p>
+    <div id="personalMessage" style="display: none;">
+        <p>May your day be filled with laughter, surprises, and all the things you love!</p>
+        <p>Happy Birthday!</p>
+    </div>
+
+    <!-- Placeholder for dynamic content -->
+    <div id="dynamicContent">
+        <!-- You can fetch and display recent photos, memories, or messages here -->
+    </div>
+
+    <div class="button-container">
+        <button class="birthday-button" onclick="addBalloonsAndLove()">Add More Fun!</button>
+    </div>
+
+    <div class="birthday-tags">
+        <div class="tag">#Celebration</div>
+        <div class="tag">#Happiness</div>
+        <div class="tag">#ManasiReddy</div>
+        <div class="tag">#JoyfulDay</div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("container");
+
+            // Function to create balloons
+            function createBalloon(className) {
+                const balloon = document.createElement("div");
+                balloon.className = "balloon " + className;
+                balloon.style.left = Math.random() * window.innerWidth + "px";
+                container.appendChild(balloon);
+            }
+
+            // Function to create love symbols
+            function createLove() {
+                const love = document.createElement("div");
+                love.className = "love";
+                love.innerHTML = "&#10084;";
+                love.style.left = Math.random() * window.innerWidth + "px";
+                love.style.top = Math.random() * window.innerHeight + "px";
+                container.appendChild(love);
+            }
+
+            // Function to create confetti
+            function createConfetti() {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.style.left = Math.random() * window.innerWidth + "px";
+                container.appendChild(confetti);
+            }
+
+            // Function to create boosters
+            function createBooster() {
+                const booster = document.createElement("div");
+                booster.className = "booster";
+                booster.innerHTML = "&#127881;"; // Unicode for party popper
+                booster.style.left = Math.random() * window.innerWidth + "px";
+                container.appendChild(booster);
+            }
+
+            // Function to create cake symbols
+            function createCake() {
+                const cake = document.createElement("div");
+                cake.className = "cake";
+                cake.innerHTML = "&#127856;"; // Unicode for birthday cake
+                cake.style.left = Math.random() * window.innerWidth + "px";
+                container.appendChild(cake);
+            }
+
+            // Create balloons, love symbols, and confetti
+            for (let i = 0; i < 15; i++) {
+                const balloonColors = ['red', 'blue', 'green', 'yellow', 'purple'];
+                const randomColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                createBalloon(randomColor);
+                createLove();
+                createConfetti();
+            }
+
+            // Create boosters and cake symbols
+            for (let i = 0; i < 5; i++) {
+                createBooster();
+                createCake();
+            }
+        });
+
+        // Function to add more balloons, love symbols, and confetti on button click
+        function addBalloonsAndLove() {
+            for (let i = 0; i < 5; i++) {
+                const balloonColors = ['red', 'blue', 'green', 'yellow', 'purple'];
+                const randomColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+                createBalloon(randomColor);
+                createLove();
+                createConfetti();
+            }
+        }
+
+        // New function to show a personal message
+        function showPersonalMessage() {
+            const personalMessage = document.getElementById("personalMessage");
+            personalMessage.style.display = "block";
+        }
+    </script>
+
+    <!-- Uncomment and replace with your music file path -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="path/to/your-music.mp3" type="audio/mp3">
+    </audio>
+</body>
+
+</html>
